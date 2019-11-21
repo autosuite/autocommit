@@ -1,0 +1,26 @@
+{
+  "name": "autocommit",
+  "version": "0.0.0",
+  "description": "GitHub Action that automatically adds and commits specific files/all unstaged files.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teaminkling/autocommit.git"
+  },
+  "keywords": [
+    "github",
+    "action"
+  ],
+  "author": "Inkling Interactive",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/teaminkling/autocommit/issues"
+  },
+  "homepage": "https://github.com/teaminkling/autocommit#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0"
+  }
+}

@@ -1,0 +1,26 @@
+name: autocommit
+description: Automation of commits pre-staging after GitHub Actions have executed.
+author: Inkling Interactive
+branding:
+  icon: git-commit
+  color: yellow
+runs:
+  using: node12
+  main: index.js
+inputs:
+  add-options:
+    description: The optional flags or options used when adding files to the staging area.
+    default: -A
+    required: true
+  commit-message:
+    description: The commit message that the single commit will show in the history.
+    default: '[automated, skip-ci] Autocommit of GitHub Actions-generated files.'
+    required: true
+  email:
+    description: The email to use for the committer.
+    default: action@github.com
+    required: true
+  name:
+    description: The name of the committer.
+    default: Autocommit
+    required: true
