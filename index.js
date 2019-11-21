@@ -26,9 +26,6 @@ if (!gitAddOptions || gitAddOptions == '') {
     process.exit(1);
 }
 
-// git config --local user.email "action@github.com"
-// git config --local user.name "GitHub Action"
-
 try {
     execSync('git add ' + gitAddOptions);
     execSync('git config --local user.email "' + commitEmail + '"');

@@ -11,6 +11,17 @@ jobs:
         with:
           commit-filter: skip-log, skip-ci, automated
       - uses: teaminkling/autobadger@master
+      - uses: teaminkling/autoversion@master
+        with:
+          managers: npm
+      - uses: teaminkling/automilestone@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-repository: ${{ github.repository }}
+      - uses: teaminkling/autologger@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-repository: ${{ github.repository }}
       - uses: teaminkling/autocommit@master
       - uses: ad-m/github-push-action@master
         with:
