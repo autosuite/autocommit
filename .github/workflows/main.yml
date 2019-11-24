@@ -7,22 +7,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: teaminkling/skip-commit@master
+      - uses: autosuite/autoskip@master
         with:
           commit-filter: skip-log, skip-ci, automated
-      - uses: teaminkling/autobadger@master
-      - uses: teaminkling/autoversion@master
+          always-allow-tags: true
+          ref: ${{ github.ref }}
+      - uses: autosuite/autobadger@master
+      - uses: autosuite/autoversion@master
         with:
           managers: npm
-      - uses: teaminkling/automilestone@master
+      - uses: autosuite/automilestone@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-repository: ${{ github.repository }}
-      - uses: teaminkling/autologger@master
+      - uses: autosuite/autologger@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           github-repository: ${{ github.repository }}
-      - uses: teaminkling/autocommit@master
+      - uses: autosuite/autocommit@master
       - uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
