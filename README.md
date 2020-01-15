@@ -1,10 +1,12 @@
 # Autocommit
 
-![Autobadger Release Stability](https://img.shields.io/static/v1?label=stability&message=unusable&style=flat-square&color=red)
-![Autobadger Latest Release](https://img.shields.io/static/v1?label=latest&message=0.0.0&style=flat-square&color=purple)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bcf1565687e94d9a98db2bc391f7f814)](https://www.codacy.com/gh/autosuite/autocommit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=autosuite/autocommit&amp;utm_campaign=Badge_Grade)
+| Summary           | Badge                                              |
+| ----------------- | -------------------------------------------------- |
+| Release Stability | ![Autobadger Release Stability][release-stability] |
+| Latest Release    | ![Autobadger Latest Release][latest-release]       |
 
-[_What are these badges?_](https://github.com/teaminkling/autobadger/tree/master/BADGES.md)
+[release-stability]: https://img.shields.io/static/v1?label=latest&message=0.1.0&color=purple
+[latest-release]: https://img.shields.io/static/v1?label=stability&message=prerelease&color=yellow
 
 ## Introduction
 
