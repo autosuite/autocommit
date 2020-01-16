@@ -14,13 +14,13 @@ inputs:
     required: true
   commit-message:
     description: The commit message that the single commit will show in the history.
-    default: '[automated, skip-ci] Autocommit of GitHub Actions-generated files.'
+    default: 'Autocommit of GitHub Actions-generated files.\n[automated, skip-ci]'
     required: true
   email:
     description: The email to use for the committer.
-    default: action@github.com
+    default: noreply@github.com
     required: true
   name:
     description: The name of the committer.
-    default: Autocommit
+    default: GitHub Action
     required: true
