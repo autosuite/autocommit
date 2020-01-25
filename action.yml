@@ -14,7 +14,10 @@ inputs:
     required: true
   commit-message:
     description: The commit message that the single commit will show in the history.
-    default: 'Autocommit of GitHub Actions-generated files.\n[automated, skip-ci]'
+    default: >
+      Autocommit of GitHub Actions-generated files
+
+      [automated, skip-ci]
     required: true
   email:
     description: The email to use for the committer.
