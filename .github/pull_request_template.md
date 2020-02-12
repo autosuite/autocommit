@@ -1,5 +1,3 @@
-Closes #<issue-number-here>.
-
 ## Checklist
 
 - [ ] Ensure all changes are locally tested.

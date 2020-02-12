@@ -6,7 +6,7 @@ branding:
   color: yellow
 runs:
   using: node12
-  main: index.js
+  main: dist/main.js
 inputs:
   add-options:
     description: The optional flags or options used when adding files to the staging area.
