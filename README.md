@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-       # Do something here, pre-stage.
+      # Do something here, pre-stage.
       - uses: autosuite/autocommit@master
         with:
           commit-message: Your custom commit message here.
