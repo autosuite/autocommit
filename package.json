@@ -1,6 +1,6 @@
 {
   "name": "autocommit",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "GitHub Action that automatically adds and commits specific files/all unstaged files.",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/teaminkling/autocommit#readme",
   "dependencies": {
-    "@actions/core": "^1.2.0"
+    "@actions/core": "^1.2.2",
+    "@actions/exec": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "typescript": "^3.7.5"
   }
 }
