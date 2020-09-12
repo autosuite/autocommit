@@ -7,7 +7,7 @@
 | Code Quality      | [![Maintainability][quality-image]][quality-link]  |
 | Code Coverage     | [![Test Coverage][coverage-image]][coverage-link]  |
 
-[release-stability]: https://img.shields.io/static/v1?label=latest&message=0.1.0&color=purple
+[release-stability]: https://img.shields.io/static/v1?label=latest&message=0.2.0&color=purple
 [latest-release]: https://img.shields.io/static/v1?label=stability&message=prerelease&color=yellow
 [quality-image]: https://api.codeclimate.com/v1/badges/2a5e3b36c9c7907dc13e/maintainability
 [quality-link]: https://codeclimate.com/github/autosuite/autocommit/maintainability
