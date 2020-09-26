@@ -48,7 +48,7 @@ async function runAction() {
         await exec.exec(`git config --local user.name "${commitName}"`);
         await exec.exec(`git commit -m "${inputMessage}"`);
     } catch {
-        core.warning("Cannot add and commit. This is probably fine (see log if not), continuing...");
+        core.info("Did not add & commit. This is probably because your branch is up to date.");
     }
 }
 

@@ -4,7 +4,8 @@
   "description": "GitHub Action that automatically adds and commits specific files/all unstaged files.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

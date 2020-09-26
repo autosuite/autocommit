@@ -45,7 +45,37 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core = __importStar(require("@actions/core"));
 var exec = __importStar(require("@actions/exec"));
-function run() {
+// noinspection FunctionWithMoreThanThreeNegationsJS
+/**
+ * Validate that the given inputs are non-negative and set failed with reason if they are.
+ *
+ * Note that while these are marked required, this doesn't mean GitHub will check for empty strings.
+ *
+ * @param gitAddOptions The parameter for `gitAddOptions`.
+ * @param inputMessage The parameter for `inputMessage`.
+ * @param commitEmail The parameter for `commitEmail`.
+ * @param commitName The parameter for `commitName`.
+ */
+function validateInputs(gitAddOptions, inputMessage, commitEmail, commitName) {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            if (!gitAddOptions) {
+                core.setFailed("You must provide git add options with 'add-options'! Try '-A'.");
+            }
+            if (!inputMessage) {
+                core.setFailed("You must provide a commit message with the input 'commit-message'!");
+            }
+            if (!commitEmail) {
+                core.setFailed("You must provide a commit email in input 'email'!");
+            }
+            if (!commitName) {
+                core.setFailed("You must provide a commit name (like a full name) in input 'name'!");
+            }
+            return [2 /*return*/];
+        });
+    });
+}
+function runAction() {
     return __awaiter(this, void 0, void 0, function () {
         var gitAddOptions, inputMessage, commitEmail, commitName, _a;
         return __generator(this, function (_b) {
@@ -55,41 +85,36 @@ function run() {
                     inputMessage = core.getInput('commit-message');
                     commitEmail = core.getInput('email');
                     commitName = core.getInput('name');
-                    if (!gitAddOptions || gitAddOptions == '') {
-                        core.setFailed("You must provide git add options with 'add-options'! Try '-A'.");
-                    }
-                    else if (!inputMessage || inputMessage == '') {
-                        core.setFailed("You must provide a commit message with the input 'commit-message'!");
-                    }
-                    else if (!commitEmail || commitEmail == '') {
-                        core.setFailed("You must provide a commit email in input 'email'!");
-                    }
-                    else if (!commitName || commitName == '') {
-                        core.setFailed("You must provide a commit name (like a full name) in input 'name'!");
-                    }
-                    _b.label = 1;
+                    /* Required might be set in the YAML but we need to check for empty too. */
+                    return [4 /*yield*/, validateInputs(gitAddOptions, inputMessage, commitEmail, commitName)];
                 case 1:
-                    _b.trys.push([1, 6, , 7]);
-                    return [4 /*yield*/, exec.exec("git add " + gitAddOptions)];
-                case 2:
+                    /* Required might be set in the YAML but we need to check for empty too. */
                     _b.sent();
-                    return [4 /*yield*/, exec.exec("git config --local user.email \"" + commitEmail + "\"")];
+                    _b.label = 2;
+                case 2:
+                    _b.trys.push([2, 7, , 8]);
+                    return [4 /*yield*/, exec.exec("git add " + gitAddOptions)];
                 case 3:
                     _b.sent();
-                    return [4 /*yield*/, exec.exec("git config --local user.name \"" + commitName + "\"")];
+                    return [4 /*yield*/, exec.exec("git config --local user.email \"" + commitEmail + "\"")];
                 case 4:
                     _b.sent();
-                    return [4 /*yield*/, exec.exec("git commit -m \"" + inputMessage + "\"")];
+                    return [4 /*yield*/, exec.exec("git config --local user.name \"" + commitName + "\"")];
                 case 5:
                     _b.sent();
-                    return [3 /*break*/, 7];
+                    return [4 /*yield*/, exec.exec("git commit -m \"" + inputMessage + "\"")];
                 case 6:
+                    _b.sent();
+                    return [3 /*break*/, 8];
+                case 7:
                     _a = _b.sent();
-                    core.warning("Cannot add and commit. This is probably fine (see log if not), continuing...");
-                    return [3 /*break*/, 7];
-                case 7: return [2 /*return*/];
+                    core.info("Did not add & commit. This is probably because your branch is up to date.");
+                    return [3 /*break*/, 8];
+                case 8: return [2 /*return*/];
             }
         });
     });
 }
-run();
+var actionRunner = runAction();
+/* Handle promises. */
+actionRunner.then(function () { });
