@@ -14,6 +14,10 @@
 [coverage-image]: https://api.codeclimate.com/v1/badges/2a5e3b36c9c7907dc13e/test_coverage
 [coverage-link]: https://codeclimate.com/github/autosuite/autocommit/test_coverage
 
+## Deprecated
+
+Don't use this repo. Use [this one instead](https://github.com/stefanzweifel/git-auto-commit-action) (stefanzweifel/git-auto-commit-action).
+
 ## Introduction
 
 GitHub Action that automatically adds some files and commits them in preparation of a push to a remote. This Action is designed for use with an Action such as [github-push-action](https://github.com/ad-m/github-push-action) as the following step.
